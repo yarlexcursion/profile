@@ -48,7 +48,7 @@ body{
 /* HEADER */
 .header{
   height:170px;
-  background:linear-gradient(135deg,#0ea5a4,#2563eb);
+  background:linear-gradient(135deg,#030d22,#14b8a6);
   border-bottom-left-radius:30px;
   border-bottom-right-radius:30px;
 }
@@ -67,6 +67,17 @@ body{
 .profile h2{margin-top:10px;}
 .profile p{color:#777;font-size:14px;}
 
+.logo{
+  text-align:center;
+  margin-top:50px;
+  padding-left: 20px;
+}
+.logo img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:5px solid #fff;
+}
 .stats{
   display:flex;
   justify-content:space-around;
@@ -83,12 +94,23 @@ body{
   margin:0 auto 20px;
   text-align:center;
   padding:12px;
-  background:linear-gradient(135deg,#0ea5a4,#2563eb);
+  background:linear-gradient(135deg,#030d22,#14b8a6);
   color:#fff;
   border-radius:25px;
   text-decoration:none;
 }
-
+.btncollapse{
+   
+  width:100%;
+  max-width:100px;
+  margin:0 auto 10px;
+  text-align:center;
+  padding:5px;
+  background:linear-gradient(135deg,#030d22,#14b8a6);
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+}
 .social-links {
             display: flex;
             justify-content: center;
@@ -200,7 +222,50 @@ body{
     color: #cbd5e1;
     font-size: 16px;
 }
+#more {display: none;}
+.more-text {
+  display: none;
+}
+/* GAllery */
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
 
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
 /* Responsive */
 @media(max-width: 600px){
     .teal-box {
@@ -221,17 +286,15 @@ body{
     <div class="page">
       <div class="header"></div>
       <div class="profile">
-        <img src="Logo.jpeg">
+        <img src="ninthu.png">
         <h2>S. Ninthujan</h2>
         <p>Proprietor</p>
       </div>
 
-      <div class="stats">
-        <div class="stat"><h3>245</h3>Posts</div>
-        <div class="stat"><h3>12K</h3>Followers</div>
-        <div class="stat"><h3>530</h3>Following</div>
+      <div class="logo">
+        <img src="Logo.jpeg">
+        <h1>Entry to Northern Wonders!</h1>
       </div>
-
       <a href="tel:+94770083724" class="btn">Call Now</a>
     </div>
 
@@ -257,32 +320,77 @@ body{
 
 			<div class="teal-box">
 				<h3 class="teal-title">Fullday Tour</h3>
-				<p class="teal-desc">You can see most of the places and experience in Jaffna</p>
+				<p class="teal-desc">A full-day guided tour of Jaffna offers a deep dive into the unique Tamil culture, <span class="dots"></span><span class="more-text">
+				Dutch colonial history, and spiritual sites of Sri Lanka's northern capital. Highlights typically include the stunning Nallur Kandaswamy Kovil, historic Jaffna Fort, Nilavarai Bottomless Well, and the northernmost point of Point Pedro.</p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
 			</div>
 
 			<div class="teal-box">
 				<h3 class="teal-title">Halfday Tour</h3>
-				<p class="teal-desc">Halfday tours come with best point of Jaffna</p>
+				<p class="teal-desc">A half-day tour of Jaffna offers a captivating, condensed glimpse into the region's unique <span class="dots"></span><span class="more-text">
+				Tamil heritage, war-torn history, and vibrant culture. Key highlights usually include exploring the historic Dutch Fort, visiting the iconic Nallur Kandaswamy Kovil, exploring the bustling Jaffna Market, and visiting the renovated Public Library, often featuring a traditional Tamil snack. </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
 			</div>
 
-			<div class="teal-box">
-				<h3 class="teal-title">Temples Tour</h3>
-				<p class="teal-desc">Most popular Jaffna Temples Visit</p>
-			</div>
-
-			<div class="teal-box">
-				<h3 class="teal-title">Delft Tour</h3>
-				<p class="teal-desc">It's a Fullday package for Delft Island</p>
-			</div>
 			<div class="teal-box">
 				<h3 class="teal-title">Cultural Tour</h3>
-				<p class="teal-desc">It's a Halfday package for Cultural Places</p>
+				<p class="teal-desc">A cultural tour of Jaffna offers an immersive journey into the heart of Northern <span class="dots"></span><span class="more-text">
+				Sri Lanka’s unique Tamil heritage, typically covering historic temples, colonial ruins, and vibrant markets over 4 hours or more. </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
 			</div>
 
+			<div class="teal-box">
+				<h3 class="teal-title">Delft Island Tour</h3>
+				<p class="teal-desc">A Delft Island tour from Jaffna is a day trip to a remote, flat coral island in the <span class="dots"></span><span class="more-text">
+				Palk Strait, renowned for its wild horses, colonial ruins, and unique coral-walled landscapes. Accessible by ferry from Kurikkaduwan Jetty, highlights include the Baobab tree, Dutch Fort, Pigeon Nest, and white sandy beaches. </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
+			</div>
+			<div class="teal-box">
+				<h3 class="teal-title">Tuk Tuk Tour</h3>
+				<p class="teal-desc">A tuk-tuk tour in Jaffna offers an intimate, open-air exploration of <span class="dots"></span><span class="more-text">
+				Sri Lanka’s unique northern capital, blending deep Tamil culture, colonial history, and vibrant local life. These guided, 2–3 hour, or full-day excursions typically cover iconic spots like the Nallur Kandaswamy Temple, Jaffna Fort, and the restored Public Library. </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
+			</div>
+			<div class="teal-box">
+				<h3 class="teal-title">Cooking Demo</h3>
+				<p class="teal-desc">A Jaffna village cooking demonstration offers an intimate, hands-on immersion <span class="dots"></span><span class="more-text">
+				into the unique culinary traditions of Northern Sri Lanka, often held in a local home within the suburbs of Jaffna. These experiences typically last 2–3 hours and focus on creating authentic, fiery, and coconut-rich dishes using traditional, age-old techniques. </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
+			</div>
+			<div class="teal-box">
+				<h3 class="teal-title">Toddy Tapping</h3>
+				<p class="teal-desc">Jaffna toddy tapping is a dangerous, traditional, and highly skilled art where toddy <span class="dots"></span><span class="more-text">
+				tappers ("paneriver") climb tall Palmyra palms, often scaling 60–80 feet, to collect sap for producing toddy, a popular local alcoholic beverage. Tappers walk across tightropes between trees to harvest the sugary, fermented sap, which is then served in coconut shells.  </p>
+				</span>
+				<button class="btncollapse" onclick="toggleReadMore(this)" >Read more</button>
+			</div>
 		</div>
       </div> 
     </div>
-
+	 <!-- CONTACT -->
+	 <div class="page">
+      <div class="card"><h2>Galleries</h2>
+	  <div class="row"> 
+		  <div class="column">
+			<img src="1.jpg" style="width:100%">
+			<img src="2.png" style="width:100%">
+			<img src="3.png" style="width:100%">
+			<img src="4.png" style="width:100%"> 
+		  </div>
+		  <div class="column">
+			<img src="5.jpg" style="width:100%">
+			<img src="6.jpg" style="width:100%">
+			<img src="7.png" style="width:100%"> 
+		  </div> 
+		</div>
+	  </div>
+	  </div>
     <!-- CONTACT -->
     <div class="page">
       <div class="card"><h2>Contact</h2>
@@ -310,7 +418,7 @@ body{
                     <a href="https://instagram.com" class="social-link" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
-        </div>
+			</div>
 	  </div>
     </div>
 
@@ -321,8 +429,9 @@ body{
 <div class="bottom-nav">
   <div class="nav-item active" onclick="go(0)"><i class="fa fa-home"></i>Home</div>
   <div class="nav-item" onclick="go(1)"><i class="fa-solid fa-circle-info"></i>About</div>
-  <div class="nav-item" onclick="go(2)"><i class="fa-solid fa-briefcase"></i>Portfolio</div>
-  <div class="nav-item" onclick="go(3)"><i class="fa-solid fa-address-book"></i>Contact</div>
+  <div class="nav-item" onclick="go(2)"><i class="fa-solid fa-briefcase"></i>Itinerary</div>
+  <div class="nav-item" onclick="go(3)"><i class="fa-solid fa-image"></i>Galleries</div>
+  <div class="nav-item" onclick="go(4)"><i class="fa-solid fa-address-book"></i>Contact</div>
  
 </div>
 
@@ -350,6 +459,27 @@ track.addEventListener("touchend",e=>{
   if(diff>50 && index<4) go(index+1);
   if(diff<-50 && index>0) go(index-1);
 },{passive:true});
+
+/* collapse */
+ 
+function toggleReadMore(button) {
+
+  var card = button.closest(".teal-box");
+
+  var dots = card.querySelector(".dots");
+  var moreText = card.querySelector(".more-text");
+
+  if (moreText.style.display === "inline") {
+    moreText.style.display = "none";
+    dots.style.display = "inline";
+    button.innerHTML = "Read more";
+  } else {
+    moreText.style.display = "inline";
+    dots.style.display = "none";
+    button.innerHTML = "Read less";
+  }
+
+}
 </script>
 
 </body>
