@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+
+body{
+  background:#eef4f6;
+}
+
+/* SWIPE TRACK */
+.swipe-container{
+  overflow:hidden;
+  width:100%;
+}
+
+.swipe-track{
+  display:flex;
+  transition:transform .3s ease;
+}
+
+.page{
+  min-width:100%;
+  padding-bottom:80px;
+}
+.services {
+            padding: 0 30px 30px;
+        }
+
+.service {
+            background-color: var(--service-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+}
+
+
+/* HEADER */
+.header{
+  height:170px;
+  background:linear-gradient(135deg,#0ea5a4,#2563eb);
+  border-bottom-left-radius:30px;
+  border-bottom-right-radius:30px;
+}
+
+/* PROFILE */
+.profile{
+  text-align:center;
+  margin-top:-70px;
+}
+.profile img{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  border:5px solid #fff;
+}
+.profile h2{margin-top:10px;}
+.profile p{color:#777;font-size:14px;}
+
+.stats{
+  display:flex;
+  justify-content:space-around;
+  margin:20px 0;
+}
+
+.stat{text-align:center;}
+.stat h3{color:#0ea5a4;}
+
+.btn{
+  display:block;
+  width:80%;
+  max-width:300px;
+  margin:0 auto 20px;
+  text-align:center;
+  padding:12px;
+  background:linear-gradient(135deg,#0ea5a4,#2563eb);
+  color:#fff;
+  border-radius:25px;
+  text-decoration:none;
+}
+
+.social-links {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #14b8a6;
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+			background: linear-gradient(145deg, #1e293b, #111827);
+        }
+
+/* CARD */
+.card{
+  background:#fff;
+  margin:15px;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+
+/* BOTTOM NAV */
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-around;
+  background:#fff;
+  padding:10px 0;
+  box-shadow:0 -3px 12px rgba(0,0,0,.08);
+}
+
+.nav-item{
+  text-align:center;
+  font-size:12px;
+  color:#777;
+  flex:1;
+}
+
+.nav-item i{
+  display:block;
+  font-size:20px;
+}
+
+.nav-item.active{
+  color:#0ea5a4;
+}
+
+/* Wrapper */
+.teal-wrapper {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Service Box */
+.teal-box {
+    background: linear-gradient(145deg, #1e293b, #111827);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Teal Accent Line */
+.teal-box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20px;
+    height: 60%;
+    width: 6px;
+    background: #14b8a6;
+    border-radius: 10px;
+}
+
+.teal-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20,184,166,0.3);
+}
+
+.teal-title {
+    margin: 0 0 12px;
+    color: #ffffff;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.teal-desc {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media(max-width: 600px){
+    .teal-box {
+        padding: 20px;
+    }
+    .teal-title {
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="swipe-container">
+  <div class="swipe-track" id="track">
+
+    <!-- HOME -->
+    <div class="page">
+      <div class="header"></div>
+      <div class="profile">
+        <img src="Logo.jpeg">
+        <h2>S. Ninthujan</h2>
+        <p>Proprietor</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><h3>245</h3>Posts</div>
+        <div class="stat"><h3>12K</h3>Followers</div>
+        <div class="stat"><h3>530</h3>Following</div>
+      </div>
+
+      <a href="tel:+94770083724" class="btn">Call Now</a>
+    </div>
+
+    <!-- INFO -->
+    <div class="page">
+      <div class="card">
+		<h2>About</h2>
+		<br>
+		<div class="teal-box">
+				
+		<p class="teal-desc">Passionate and knowledgeable tour guide with 10+ years of experience delivering immersive, engaging, and informative tours.  <br> <br>
+		Expert in local history, cultural, and storytelling, focusing on creating unique, unforgettable experiences for diverse groups.  <br> <br>
+		Adept at tailoring narratives, managing, logistics, and ensuring safety while providing exceptional, friendly service.</p>
+		</div>
+		
+	  </div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="page">
+      <div class="card"> <h2>Itinerary</h2>
+        <div class="teal-wrapper">
+
+			<div class="teal-box">
+				<h3 class="teal-title">Fullday Tour</h3>
+				<p class="teal-desc">You can see most of the places and experience in Jaffna</p>
+			</div>
+
+			<div class="teal-box">
+				<h3 class="teal-title">Halfday Tour</h3>
+				<p class="teal-desc">Halfday tours come with best point of Jaffna</p>
+			</div>
+
+			<div class="teal-box">
+				<h3 class="teal-title">Temples Tour</h3>
+				<p class="teal-desc">Most popular Jaffna Temples Visit</p>
+			</div>
+
+			<div class="teal-box">
+				<h3 class="teal-title">Delft Tour</h3>
+				<p class="teal-desc">It's a Fullday package for Delft Island</p>
+			</div>
+			<div class="teal-box">
+				<h3 class="teal-title">Cultural Tour</h3>
+				<p class="teal-desc">It's a Halfday package for Cultural Places</p>
+			</div>
+
+		</div>
+      </div> 
+    </div>
+
+    <!-- CONTACT -->
+    <div class="page">
+      <div class="card"><h2>Contact</h2>
+			<div class="teal-box">
+				<h3 class="teal-title"><i class="fas fa-phone contact-icon"></i></h3>
+				<p class="teal-desc">+94 770 083 724</p>
+			</div>
+
+			<div class="teal-box">
+				<h3 class="teal-title"><i class="fas fa-envelope contact-icon"></i></h3>
+				<p class="teal-desc">yarlexcursion@gmail.com</p>
+			</div>
+
+			<div class="teal-box">
+				<h3 class="teal-title"><i class="fa-solid fa-location-dot"></i></h3>
+				<p class="teal-desc">Tellippalai West, Tellippalai</p>
+			</div>
+			<div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a> 
+                    <a href="https://linkedin.com" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+        </div>
+	  </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <div class="nav-item active" onclick="go(0)"><i class="fa fa-home"></i>Home</div>
+  <div class="nav-item" onclick="go(1)"><i class="fa-solid fa-circle-info"></i>About</div>
+  <div class="nav-item" onclick="go(2)"><i class="fa-solid fa-briefcase"></i>Portfolio</div>
+  <div class="nav-item" onclick="go(3)"><i class="fa-solid fa-address-book"></i>Contact</div>
+ 
+</div>
+
+<script>
+let index=0;
+const track=document.getElementById("track");
+const nav=document.querySelectorAll(".nav-item");
+
+function go(i){
+  index=i;
+  track.style.transform=`translateX(-${i*100}%)`;
+  nav.forEach(n=>n.classList.remove("active"));
+  nav[i].classList.add("active");
+}
+
+/* SWIPE */
+let startX=0;
+
+track.addEventListener("touchstart",e=>{
+  startX=e.touches[0].clientX;
+},{passive:true});
+
+track.addEventListener("touchend",e=>{
+  let diff=startX-e.changedTouches[0].clientX;
+  if(diff>50 && index<4) go(index+1);
+  if(diff<-50 && index>0) go(index-1);
+},{passive:true});
+</script>
+
+</body>
+</html>
